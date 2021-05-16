@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white: #ffffff;
+}
+
+body{
+    margin: 0px;
+    position: relative;
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.swiper-slide {
+    width: 100%;
+    height: 100vh;
+    text-align: left;
+    font-size: 18px;
+    background: linear-gradient(#d62828, #003049);
+    cursor: pointer;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+
+.swiper-slide div{
+    display: flex;
+}
+
+.swiper-slide--container1{
+    background: url(../assets/29486.jpg);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide--lugar{
+    width: 100%;
+    align-items: center;
+    font-size: 2.5rem;
+    margin-left: 50px;
+    padding-left: 50px;
+}
+
+.swiper-slide--lugar ul{
+    background: rgba(0, 0, 0, 0.383);
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 0px 30px 0px 30px;
+}
+
+.swiper-slide--lugar h3{
+    color: #2ec4b6;
+    font-size: 4rem;
+}
+
+
+.swiper-slide--lugar p{
+    color: #ffffff;
+}
+
+.swiper-slide--info{
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--white);
+    padding-left: 50px;
+    background: #0000007c;
+}
+
+
+.swiper-slide--info b{
+    color: #2EC4B6;
+}
+
+.swiper-slide--info h4:nth-child(3){
+    margin-bottom: 30px;
+}
+
+.swiper-slide--info h5{
+    color: #2EC4B6;
+}
+
+.swiper-slide--info p{
+    color: #ffffff;
+}
+
+/* IMG 1*/
+
+.swiper-slide--container2{
+    background: url(../assets/913952.jpg);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide--container3{
+    background: url(../assets/102656.jpg);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide--container4{
+    background: url(../assets/320986.jpg);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide--container5{
+    background: url(../assets/601997.jpg);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide--container6{
+    background: url(../assets/751003.jpg);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide--container7{
+    background: url(../assets/cross.jpg);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide--container8{
+    background: url(../assets/elderOblivion.jpg);
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+
+

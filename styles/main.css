@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Ubuntu', monospace;
+    background: var(--cielo)
+}
+
+:root{
+    --cielo: #48CAE4;
+    --blanco: #FFFFFF;
+    --azul: #14213d;
+}
+
+.header{
+    width: 100%;
+    height: 115px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    z-index: 999;
+
+    /* background: #48cae44b; */
+    padding-bottom: 20px;
+}
+
+
+
+.header__name img{
+    width: 100px;
+    height: 100px;
+    margin: 20px 0px 0px 5px;
+}
+
+.header__name{
+    display: flex;
+    color: var(--blanco);
+    align-items: center;
+}
+
+.header__name:hover{
+    cursor: pointer;
+}
+
+.header__name h1{
+    font-size: 3rem;
+    margin-left: 20px;
+}
+
+.header__menu li{
+    margin-right: 20px;
+    list-style: none;
+}
+
+.header__menu a{
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+.header__menu a:hover{
+    text-decoration: underline;
+    background: var(--azul);
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 1.5rem;
+}
+
+.header__login img{
+    width: 40px;
+    height: 40px;
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+.header__login:hover{
+    margin: 50px 0px 0px 0px;
+}
+
+.header__login--logo{
+    display: flex;
+    margin-right: 20px;
+}
+
+.header__login--logo a{
+    color: var(--blanco);
+    margin-top: 5px;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+.header__login--logo a:hover{
+    color: var(--cielo);
+    text-decoration: underline;
+}
+
+
+
+.header__login ul{
+    display: none;
+}
+
+.header__login:hover ul, ul:hover{
+    display: block;
+}
+
+.header__login--user li{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+
+.header__login--user li:hover{
+    display: flex;
+}
+
+.header__login--user li a{
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+
+.header__login--user li a:hover{
+    text-decoration: underline;
+    color: var(--cielo);
+}
