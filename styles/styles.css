@@ -1,0 +1,1153 @@
+/*
+    Estructura:
+    selector{
+        propiedad: valor;
+        --propiedad se refiero a lo que vamos a cambiar por ejemplo borde, tamano, alto, color
+        --el valor es lo que le damos como propiedad al color tamanio borde
+    }
+
+    CSS Selectores
+    universal: * {
+    }
+
+    de tipo: h1{
+        selcciona por etiquetas
+    }
+
+    por clases: container{
+    }
+
+    ID: #container{
+        a diferencia de a clase se utiliza el "#"
+        los ID identifica a un elemento como unico no se deberia repetir
+    }
+
+    por atributo: [container="img"]{
+        aqui usamos corchetes simples y copiamos el atributo
+    }
+
+    descendiente: a p{
+    }
+
+    pseudo-clases: img:hover{
+        en un evento se genera una comportamiento
+    }
+
+
+    especificidad:
+        !important
+            h1{
+                color: red !important;
+            }
+            el important lo que hace dar a la propiedad mayor importancia
+
+        estilos en linea -> se define en la misma linea de html y esta por enciama de todo excepto !important
+        identificadores
+
+        clases
+        pseudo-clases
+        atributos
+
+        elementos
+        pseudo-elementos
+
+        si estan en un mismo nivel de jerarquia entonces funciona en cascada
+
+
+    Metodologia BEM
+        consiste en evitar conflictos entre clases y elementos ids o pseudo-clases
+        sample:
+            .contact-form__input:first-child{
+                color: red;
+            }
+            or
+            .contact--form__input--active{
+                color:green;
+            }
+
+            nos quedamos en unidades minuto 58
+*/
+
+/*
+Unidades:
+    relativas: dependen de algo y son variables
+            sample:
+            h2{
+                font-size: 30rem;
+                font-size: 30em; 1em = 16px
+                width: 100vw; esto lo que hace es ajustar y tomar todo el ancho de la caja
+                height: 100vh; view por height"
+            }
+
+    fijas: son las que son las que no se alteran con el tamanio del contenedor; como px
+
+*/
+
+
+/*
+propiedades de texto:
+    .contact-form__h2{
+        font-size: 2em;
+        font-family: Tipografia "Ubuntu Mono" mospace;
+        line-height: 1; esto lo que hace es que emoieza en la mitad y en 2 aumenta mitad y mitad para ambos lados
+        font-weight: normal;
+        font-stretch: normal;
+        font-variant: small-caps;
+    }
+    para implemantar fondos de letra vamos a fonts.google
+    luego le damos en el mas y o copiamos el link del css luego pegamos el tipo de letra donde lo queremos implementar
+
+*/
+
+/*
+normalize:
+    se usa para reiniciar los estilos
+    *{
+        box-sizing:  border-box; lo que hace es evitar que la caja aumente de tamanio  original
+        margin: 0;
+        padding: 0;
+    }
+
+*/
+
+/*
+cajas:
+    tipos:
+    linea: se mantiene en el tamano del contenido
+        para cambiar a un elemento en bloque a linea: "diplay: inline;"
+    bloque:mantienen un ancho total
+
+    propiedades de caja:
+        background-color: #a22;
+        display: inline-block;
+
+*/
+
+/*
+padding:
+    es la distancia que hay entre el texto y la caja.
+    es tambien una propiedad que se puede escribir de diferente formas
+*/
+
+/*
+width and height:
+    aplicamos box-sizing: border-box;
+    para que estas propiedades no cambien y sumen el paddig o el margin
+
+*/
+
+/*
+box sizing:
+    lo que hace es contener un elemento en el tamano predeterminado sin alterarlo
+
+*/
+
+
+/*
+margin:
+    es la distancia que hay entre las dos cajas
+    margin-top: ;
+    margin-right: ;
+    margin-botton: ;
+    margin-left: ;
+
+para instalar el normalizin se usa npm install normalizing.css
+
+*/
+
+
+/*
+border:
+    border-radius: es cuanto vamos a redondear el borde,
+    brode: 2px solid blue; dashe lo que hace es entre cortar,
+        double: doble linea; grove, inset: lo que hace es dar dos colores a un borde,
+        outset: lo mismo que inset pero invertido, grove, ridge es el invertido de grove;
+
+*/
+
+
+/*
+box model:
+    es el modleo en el que trabajamos las cajas,
+    estas son las propiedades que lo conforman/:
+        content: line-height; esta dentro del padding
+        padding: padding; esta dentro del contenido
+        border: border; esta por fuera del padding
+        margin: margin; esta por fuera del border
+*/
+
+
+/*
+sombras:
+    box-shadow: nos permite dar sombra a la caja
+        box-shadow: 1px 2px 15px 0 #000; no movemos en eje x y luego eje Y, enfoque, borde, color,
+        text-shadow: 2px 2px 7px #fff, 2px 2px 7px #fff, es casi lo mismo excepto que no tiene el borde
+        se pone doble para dar efecto doble
+    transform: rotate(90deg); esto nos da los grados de roracion
+*/
+
+/*
+outline:
+    es un hsorjam: es una propieedad acortada porque es elconjunto de propiedades
+    outline: nos da un borde pero no ocupa un espacio real y no perjudica a las demas cajas;
+        outline: 1px solid #000;enmarcar elementos
+        margin: auto; hace que se centre los elementos en bloques
+*/
+
+
+/*
+Position
+es posiconar un elemento y adquiere nuevas propiedades nademas afecta el flujo(es como estan ordenados los elementos html)
+
+    cuando poscionamos un elemento lo que hace es adquirir 4 propiedades:
+    div{
+        top:;
+        right:;
+        botton:;
+        left:;
+    }
+
+
+    static:
+        no rerquiere poscicionarlo
+    relative:
+        mueve la caja pero siempre conserva su punto inicial y su espacio reservado
+        aqui las propiedades top y left son las mas importantes por encima de right botton
+
+            para autocentra:
+            .caja1{
+                top: 0;
+                right: 0;
+                botton: 0;
+                left: 0;
+                margin: auto;
+            }
+
+
+    z-index: lo que hace es posciocionar enciama de la que tenga el mayor valor
+        tiene un comflicto entre los padres e hijos, la unica forma de hacer cambios aquies:
+        .padre{
+            z-index: no debe estar definido
+        }
+        .hijo{
+            z-index: -1;
+        }
+    absolute:
+        igual que position relative cambian 2 cosas: el espacio reservado ya no esta reservado
+        por lo que los otros elementos se juntan
+        viewpor: es todo el body por lo que al aplicarle un top se pociona desde el princiopio del contenedor o body
+        el ancho se ajusta al contenido tambien.
+        para tomar como refernecia desde el contenedor: se coloca
+            position: relative;
+            position: absolute;
+        para colocar el top, right, left, botton;
+
+
+    fixed:
+        es igual que absolute pero se fija en un lugar
+
+    aticky:
+        es una mezcla entre fixed y relative: lo que hace es cinservar el espacio y ademas se mantiene estatico
+        cuando hacemos scroll
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+CSS NIVEL INTERMEDIO
+*/
+
+/*
+Display
+    block
+        son elementos que ocupan todo
+    inline
+        ocupan solo lo que el contenido les da
+
+    inline-block
+        solo podemos darles: width and height       estos items casi no se usan
+                                                    table
+                                                    inline-table
+                                                        tabla en linea
+                                                    list-item
+                                                    tablet-cell
+                                                        como si solo fuera una celda
+                                                    table-row
+                                                    table0column
+
+    grid
+    flex
+
+    inline-flex
+    inline-grid
+*/
+
+
+/*
+Overflow
+    es el scroll
+    propiedades:
+        overflow: defecto es visible;
+        overflow: auto; detecta si el contenido sobrepase la caja hace scroll
+        overflow: scroll; coloca obligatoria un scroll en la caja
+    ademas tenemos
+    overflow-y: hidden; para ocultarlo
+    overflow-x: scroll o auto; para colocar un scroll en la parte inferior
+*/
+
+
+/*
+Float(left, right, none, inherit)
+    uso recomendable seria solo para envolver una imagen con texto como autor y descripcion
+*/
+
+
+/*
+Pseudoelementos
+    es un elemento que no forma parte del doom
+    ::first-line    | BLOCK
+        solo funciona en elementos de bloque;
+        aqui editamos solo la primera linea
+        text::first-line: 30px;
+
+    ::first-letter  |BLOCK
+        parecida a first-line pero solo aplica a la primera letra
+        text::first-letter: 2em;
+
+    ::placeholder
+        se usa para colocar un texto dentro de un imput;
+
+    ::after         |HIJOS - CONTENT(NECESARIO) - INLINE
+        son hijos del elemento al que aplicamos este pseudoelemento
+
+    ::before        |HIJOS - CONTENT(NECESARIO) - INLINE
+        aqui podemos agregar un texto:
+            ::before{
+                content: "suscribete";
+                color: #000;
+            }
+
+    ::selection
+        es lo que hace que la letra cambie cuando seleccionamos algo
+*/
+
+
+/*
+PseudoClases
+    escuchar un evento, tenemos varias pseudoclases:
+        :hover
+            escuchar un evento cuando el maouse esta encima
+            para cambiar la velocidad del cambio de hover se usa:
+                transition: background, height, width;
+                transition: all 1s; para que cambie todo en un segundo.
+
+        :link
+            lo que hace es cambiar un elemento que todavia no visitamos
+                :link{
+                    color:;
+                }
+            lo que hace es cambiar cuando este enlace ya haya sido visitado
+            y solo cambia de color al ser visitado su la pagina no existe no cambia
+
+        :visited
+            para darle color a los links ya visitados
+                :visited: {
+                    color: ;
+                }
+
+
+        :active
+            lo que hace es cambiar un boton al presionarlo
+                :active{
+                    color:;
+                }
+        :focus
+            focus se aplica mas a los inputs
+                :focus{
+                    background: #000;
+                    transition 0.4s, padding 0.4s;
+                }
+            cuando los elementos esten seleccionados
+
+
+        :lang(idioma)
+            es una funcion que tienes que pasarle un parametro,
+                :lang(idioma){
+                    <b lang="en">Hello how are you</b>
+                }
+*/
+
+
+/*
+Object Fit
+se aplica mas para imagenes
+    contain:
+        es el valor que viene por defecto lo que hace es que la imagen se ajuste por defecto
+    cover:
+        hace que la imagen se ajuste al contenedor a la resolucion real
+    none:
+        actua como si fuera la imagen original
+    scale-down:
+        se queda con la mejor propiedad y se queda con la menor resolucion de todas.
+*/
+
+
+/*
+Object position
+    left-right-top-botton
+    px-em-%
+    lo que hace es mostrar la imagen dentro del contenedor el lado izquierdo o derecho o top segun la propiedad
+        object-position: top, left, right 1em, botton 1px;
+*/
+
+
+/*
+Cursor
+    nos permite cambiar el cursor.
+    cursor: pointer;
+
+*/
+
+
+/*
+Coloriacion(ColorName, Hex, RGB/A)
+    hexagedesimal deberiamos usarlo
+    colores primarios: verde, rojo, azul.
+*/
+
+
+/*
+Conseptos basicos de responsive Design - Mobile first
+    aqui lo que hacemos es adaptar nustro contenido a un dispositivo movil
+    adaptar una web a distintas resoluciones
+        @mediaquery tetecta una resolucion y cambia las etiquetas
+            @media only screen and(max-width: 800px){
+            }
+
+*/
+
+
+/*
+Menu Responsive
+    
+*/
+
+
+/*
+Introduccion a FlexBox
+    eje main es el eje x llamado main axis horizontal
+    y el eje es el cross-start vertical
+
+    .flex-container{
+        display: flex;
+        flex-direction: column, column-reverse, row, row-reverse;
+        flex-wrap: wrap, nowrap, wrap-reverse ; lo que hace es repetar los tamanios de las cajas
+            //para abreviar se usa:
+            flex-flow: column wrap;
+        justify-content: center, space-around, apace-between, space-evenly; space-evenly nos da el mismo margen en todas las cajas
+        align-items: stretch, flex-start, center, flex-end , baseline; "verticalmente" se usa solo cuando hay una sola linea
+        align-content: flex-start, flex-end, center, baseline; se usa para varias lineas de cajas.
+
+        align-self: stretch, center, flex-end, baseline, flex-start;alineacion en el cross axis
+    }
+Flex grow
+    agarra el espacio soobrante y lo reparte entre las cajas que quedan
+        .flex-container{
+            flex-grow: 2; aqui divide en tres partes
+        }
+
+Flex basis
+        .flex-container{
+            flex-basis: 300px; esto lo que hace es dar prioridad al objeto que se declara
+        }
+
+
+Flex shrink
+    .flex-container{
+        flex-shrink: 2; lo que sucede es que el espacio del contenedor se divide las partes que le demos
+            aqui elejimos que caja dara mas espacio
+        flex-basis: 300px; esto lo que hace es ceder la mitad
+    }
+
+Flex
+    .flex-container{
+        flex: flex-grow, flex-shrink, flex-basis;
+        flex: 1 0 350px; "1 es flex-grow" "0 flex-shrink" "350px flex-basis"
+    }
+
+
+Order
+    funciona como un z-index pero en el eje que apunta el main-axis
+    .flex-container{
+        order: 4; se ubicaria en la posicion que le asignamos
+    }
+*/
+
+
+/*
+Formulario con Flex
+*/
+*{
+    font-family: 'Ubuntu Mono', monospace;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #444;
+    margin: 50px 30px;
+
+    outline: 3px solid #94d;
+    border: 10px solid #555;
+
+    padding: 10px;
+}
+
+.form{
+    min-width: 400px;
+    flex: 1;
+    text-align: center;
+    padding: 30px;
+    order: 6;
+}
+
+
+.form__input{
+    width: 100%;
+    padding: 7px;
+    margin: 9px 0px;
+    border: none;
+    border-bottom: 3px solid #94d;
+    background: #fff;
+    outline: none;
+}
+
+.form__input::placeholder{
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+}
+
+
+.form textarea {
+    min-height: 100px;
+    resize: none;
+}
+
+.form-img{
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    order: 2;
+}
+
+.img-container{
+    width: 40%;
+    padding: 20px;
+    margin: auto;
+    background: #94d;
+    border-radius: 50%;
+
+}
+
+.form-img img{
+    width: 100%;
+    order: 1;
+}
+
+.form button{
+    background-color: #94d;
+    color: #fff;
+    border-bottom: none;
+    width: 104%;
+}
+
+.form input[type="submit"]:hover{
+    background-color: #74d;
+    cursor: pointer;
+}
+
+.form input[type="submit"]:focus{
+    background: #54d;
+}
+
+.form input[type="submit"]:active{
+    background: linear-gradient(to bottom, #63d, #94d);
+}
+
+
+/*
+Conceptos de grid
+nos quedamos en el minuto: 6:02:00 minutes
+grid
+
+grid-container
+    es todo el contenedor completo y se comporta como un bloque pero en grillas
+grid item
+    son todos los elementos que estan dentro del grid-container
+grid cell
+    es el dibujo que hacems dendro del contenedor que puede abarcar varios items
+    son cada uno de los espacios asignados a la grilla
+grid tracks(column row)
+    con las filas y las columnas
+    la suma de estas dos no da el total de grid-tracks
+grid area
+    el area se da por el tamanio que nosotros ingresemos
+    y ademas ocupar mas de una celda
+grid line(column line and row line)
+    la cantidad de lineas que temenos tanto en row and column
+
+    propiedades:
+        grid-template-rows(grid-container): 150px 150px 150px; se da el tamanio d elas filas en este caso hay 3
+        grid-template-columns(grid-container): 150px 150px 150px; se da para las columnas 3 columnas en este caso
+
+        grid-row-gap (grid-container) es cmo un margin que separa cada cuadrilla
+        grid-column-gap(grid-container)
+        grid-gap: row column(grid-container)
+
+        grid-row-start (grid-item) ocupa dos espacios 1/3
+        grid-row-end (grid item)
+        grid-column-start (grid - item) ocupa dos espacio si colocamos 1/3
+        grid-column-end (grid-item)
+        grid-row (grid-item)
+        grid-column (grid-item)
+
+        unidades "auto" y fr "el fr funciona como mediad relativa"
+        repeat (cantidad, tamanio/s)
+
+    grid implicito y grid explicito
+        3 nuevas propiedades del grid implicito
+            grid-auto-rows(igual que el template)
+            grid-auto-columns(igual que el template)
+            grid-auto-flow(default), column y dense
+
+    grid dinamico
+        minmax(100px, 200px) cual es el minimo y cual es el maximo
+        min-content : se usa para ajustar al contenido minimo
+        max-content
+
+        cantidad
+
+        auto-fill
+            coloca los elementos cuando el espacio disponible lo permite
+        auto-fit
+            mete los objetos cuando
+
+    alineacion y control de flujo
+        diferencia con flex:
+            la alineacion es dentro de cada celda y alineacion total
+            del flex container.
+            cada celda seria un flex container
+
+            (propiedades del grid container)
+
+            justify-items(horizontalmente)
+            align-items(verticalmente)
+
+            stretch(default) - start center end
+            place-items: align-items justify-items
+
+        alineacion de filas y columnas
+            justify-content(horizontalmente)
+            align-content(verticalmente)
+
+            stretch(default) - start center end
+            mas las del flex:
+                space-around
+                space-between
+                space-evenly
+
+    aplicado al grid ITEM
+        align-self
+        justify-self
+        place-self: align-self, justify-self
+
+        stretch(default) - start center end
+
+        order (igual que en flex)
+
+    grid-area
+        se usa en ves de colums and rows areas
+            grid-tamplate-areas:
+                "header header header" aqui lo que hace es darnos 3 espacios para header
+                "aside main main" aqui nos da un espacio para header y un espacio para main
+                "footer footer footer" aqui 3 espacios para footer
+
+    nombre a las lineas
+        [line-name]
+        se puede reempolazar en: GRID-ROW | GRID-COLUMN
+
+            grid-template-rows:
+                [f-line]
+                150px
+                [s-line]
+                150px
+                [t-line]
+                150px
+                [four-line];
+            grid-template-columns:
+                [f-line]
+                150px
+                [s-line]
+                150px
+                [t-line]
+                150px
+                [four-line];
+
+        .grid-item:first-child{
+            background: red;
+            grid-row: f-line / t-line;
+            grid-column: f-line / t-line;
+        }
+*/
+
+body{
+    background: linear-gradient(to right, #4d5, #4dd);
+}
+
+.grid-container{
+    display: grid;
+    grid-template-rows: repeat(3, 150px);
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) ;
+    grid-auto-rows: 150px 150px ;
+    grid-auto-columns: 150px 150px;
+    grid-auto-flow: dense; /*esto lo que hace es rellenar si alguna grilla queda vacia*/
+
+    /*esto es la diferencia con el display flex*/
+    justify-items: center;
+    align-items: center;
+
+    /*justify content es para alinear columnas*/
+    justify-content: space-around;
+
+    /*se usa para alinear las filas*/
+    align-content: center;
+
+
+    background: rgb(129, 129, 175);
+
+    padding: 20px;
+    grid-gap: 10px
+}
+.grid-item{
+    border: 2px solid #d30;
+    padding: 50px;
+}
+
+.grid-item:first-child{
+    background: #74d;
+    grid-column: 1/3;
+    grid-row: 1/3;
+    align-self: flex-start;
+    justify-self: flex-start;
+    order: 30;
+}
+
+.grid-item:nth-child(2){
+    /*nth-child(2) se usa para selecionar el 2 0 3 0 4 elementos segunse requiera*/
+    background: #d30;
+    grid-column: 3 / span 3;
+    grid-row: 1/ span 2; /*Aqui lo que le decimos con span es que ocupe 2 filas*/
+    place-self: start end;
+}
+
+.grid-item:last-child{
+    place-self: end end;
+}
+
+.grid-item:nth-child(4){
+    order: 60;/*funciona como z-index*/
+}
+
+
+/*
+Responsive design
+    estructuras flexibles (contenedores flexibles, imagenes y videos flexibles)
+    Media Query
+
+    @Media se usa en consultas de medios para aplicar diferentes estilos
+    para diferentes tipos / dispositivos de medios
+
+        ancho y alto de la ventana grafica
+        ancho y alto del dispositivo
+        orientacion (la tableta/telefono esta en modo horizotall o vertical)
+        resolucion
+
+            all
+                apto para todos los dispositivos
+            print
+                destinado a material impreso y visualizacion de documentos en una
+                pantalla en el modo de vista previa de impresion
+            screen
+                destinado principalmente a las pantallas
+            speech
+                destinado a sintetizadores de voz
+
+        operadored AND | OR
+            si la pantalla tiene 500px and 600px
+            500px 0r 600px
+
+        orientacion: ladnscape y portrait
+
+        MOBLE FIRST:
+            siempre se recomienda primero trabajar con mobile first
+
+
+        @media screen and (min-width: 400px) AND (max-width: 600px){
+            .div-responsive{
+                background: red;
+            }
+        }
+
+        @media screen and (min-width: 600px) AND (max-width: 800px){
+            .div-responsive{
+                background: green;
+                font-size: 4em;
+            }
+        }
+
+        @media screen and (min-width: 800px) AND (max-width: 1200px){
+            .div-responsive{
+                background: purple;
+                margin: 20px;
+            }
+        }
+
+        @media screen and (min-width: 1200px){
+            .div-responsive{
+                background: orange;
+                padding: 20px;
+            }
+        }
+
+
+*/
+
+
+/*
+CSS AVANZADO
+*/
+
+
+/*
+Transition
+    es una propiedad que nos permite realizar transiciones de un estado a otro
+        TRANSITION
+            transition-property: property/ies - all - none
+            transition-duration: duration/s
+            transition-delay: delay/s
+            transition-timing-function: linear | ease | ease-in |ease-out |
+                ease-in-out| step-start | step-end | steps(int, start,end) | initial | inherit;
+            transition:
+
+
+*/
+
+.transition{
+    background: violet;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 20px;
+    margin-top: 30px;
+
+}
+
+.caja{
+    background: red;
+    width: 80px;
+    height: 80px;
+
+    margin: 20px;
+
+    transition-property: left, background;
+    transition-duration: 3s, 2s;
+    transition-delay: 1s;
+
+    position: relative;
+    left: 0;
+}
+
+.transition:hover > .caja{
+    background: green;
+    left: 80%;
+}
+
+.caja:first-child{
+    transition-timing-function: linear;
+}
+
+.caja:nth-child(2){
+    transition-timing-function: ease;
+}
+
+.caja:nth-child(3){
+    transition-timing-function: ease-in;
+}
+
+.caja:nth-child(4){
+    transition-timing-function: ease-out;
+}
+
+.caja:nth-child(5){
+    transition-timing-function: ease-in-out ;
+}
+
+.caja:nth-child(6){
+    transition-timing-function: step-end;
+}
+
+
+
+.caja:last-child{
+    transition-timing-function: step-start;
+}
+
+
+
+/*
+animaciones
+nos quedamos en el minuto 8:23:33
+
+    requiere una regla llamada: @KeyFrames
+    animacion-name: name
+    animation-duration: duration
+    animation-delay: delay
+    animation-timing-function: (transition value)
+    animation-fill-mode: none | forwards| both | initial| inherit;
+    animation-direction: normal| reverse| alternate| alternate-reverse
+
+
+        .caja{
+            animation-name: desplazarce;
+            animation-duration: 3s;
+            position: relative;
+            //tambien existela posibilidad de colocar: animation-timing-funtion: ease,ease-in-out;
+            animation-iteration-count: 3 o infinite; esto es para ver vuantas veces se repetira la animacion
+            animation-direction: normal, reverse(invierte), alternate(va y vuelve), alternate-reverse(que enpieza del otro lado);
+            animation-fill-mode: none(vuelve a la normalidad), backwards(obtine valores establecidos por el primer fotograma clave),
+                forwards(se queda como definimos en ultima instacia), both(si tiene dalay, hace que arranque en el color que elejimos);
+            animation-timing-funtion: cubic-bezier(0.04, 1.0(cordenadas del primer punto), 0.76, 1.11(coordenadas del segundo unto));
+
+
+        @keyframes desplazarse{
+            0%{ //aqui podemos usar from
+                left: 0;
+                background: red;
+            }
+
+            50%{  //aqui en ves de to podemos usar 50% o 100%
+                background: 4d9;
+            }
+
+            100%{
+                left:90%
+                background: purple;
+            }
+        }
+
+        las curvas de bezier
+
+*/
+
+
+/*
+Transform
+minuto 8:41:57
+    transform: translateX(x) - translateY(y) translate(x -x,y) (si usamos porcentajes
+        son porcentajes relativos al elemento) recomendado para animar
+
+    transform: scale(xy - x,y) - scaleX(x) - ScaleY(y)
+
+    transform: totate(angleUnit) - rotateX(angleUnit) - rotateZ(angleUnit)
+        rotate3D(angleUnit) || angleUnit = deg - grad-rad-turn
+
+    transform: skew(angleUnit)
+
+    https://www.w3schools.com/cssref/css3_pr_transform.asp
+
+    .caja{
+        transform: translateX(50px); eje orizontal
+        transform: translate(100px, 100px); es para colocar los dos ejes
+        transform: scale(1.5) es para aumentar el tamanio
+    }
+
+    .caja:hover{
+        transform: scaleX(1.5) translate(100px); podemos darle dos propiedades
+        trasnform: skew(10deg); son 10 grados en este caso
+
+    }
+
+    para generar formas tenemos las paginas:
+        css clip path maker
+
+        tambie tenemos generadores de sombras:
+            cssmatic.com/box-shadow
+
+
+
+*/
+
+
+
+
+/*
+Background:
+    background-color: color;
+    background-size: x, y , auto, cover, contain
+    background-origin - origen del a foto(valores de arriba)
+    background-image: url()
+    background-position: left - top - bottom - right - center ++left
+        - top - bottom - right - center
+
+
+    .caja{
+        background: url(./img6.png)
+        background-size: 100%; para dal el tamanio de la imagen
+        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat; para que no se repita la imagen
+        background-clip: border-box(desde el borde), paddiing-box(se muestra desde el padding);//no dice desde donde mostrara la imagen
+        background-origin: border-box; aqui la imagen comieza en el borde;
+        background-origin: padding-box; aqui la imagen empieza desde el padding
+        background-position: left top; ezquierda y arriba, etc
+        background-atttachment: fixed; se matiene fijo
+    }
+
+
+*/
+
+
+/*
+variables en css
+    es un espacio que se almacena en memoria
+        variables globales: se pueden usar desde cualquier selector
+            :root{
+                --color-red: #9d4;
+            }
+
+        variables locales: se usan solo para el selector que lo contiene
+            div{
+                --rojo-claro: #94d;
+            }
+
+        si definimos la variable dentro del selector esta tendra mayor prioridad
+
+
+*/
+
+
+/*
+Filter
+    none
+    blur(px)
+    brightness(0-1)
+    contrast(number or %)
+    drop-shadow(median)
+    grayscale(%)
+    hue-rotate(deg)
+    invert(%)
+    opacity(%)
+    saturate(%)
+    sepla(%)
+    url("filters-svg#filter-id");
+
+    .div{
+        filter: blur(10px o 1em); lo que hace es desenfocarse
+        filter: brightness(10); brillo
+        filter: contrast(1.3); contraste que se da en forma de ralcion
+        filter: drop-shadow(10px 10px 10px #94d); da sombra a la imagen
+        box-shadow: 10px 10px 10px 5px #49d; da sombra a la caja
+        filter: grey-scale(1); se pone grid en 1 yy en nada mas gris y en cero nada de gris o %
+        filter: hue-rotate(10deg) se cambia el color de forma radial lo que hace invierte colores y cambia deacuerdo a los grados
+        filter: invert(10%); invierte los colores
+        filter: opacity(.5) lo que hace es dar opacidad de la mitad
+        filter: saturate(20%); los colores van al punto mas fuerte
+        filter: sepia(1); se hace sepia
+    }
+
+
+    sample:
+        .container{
+            filter: contract(20%);
+            background-color: #fff;
+        }
+
+        .caja{
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            background: red;
+            margin: 40px;
+            border-radius: 50%;
+            filter: blur(10px);
+        }
+
+        .caja:first-child{
+            animation: trasladar 3s alternate infinite;
+        }
+
+        @keyframes trasladar {
+            0%{
+                transform: translate(0);
+            }
+        }
+*/
+
+
+
+/*
+Otras propiedades, funciones y selectores curiosos de CSS:
+    direction: ltr| rtl| initial | inherit;
+        .container{
+            direction: rtl(lo que hace es centrar de derecha a izquierda)
+        }
+
+    letter spacing
+        separa las letras la cantidad que se requiera:
+            letter-spacing: 2px;
+
+    scroll-behavior
+        es para dar un efecto cuando tenemos un elemento a de enlace que nos envia al final de la pagina
+        y se usa asi:
+            scroll-behavior: smooth;
+
+
+    user-selected
+        es una propiedad que no permite selecionar texto
+            user--selected: none;
+
+
+    text-shadow
+        es para dar sombras a los textos
+
+    ----------attr() ---------
+    investigar
+
+    selectores: https://www/w3schools.com/sccref/css_selectores.asp
+    en espa pagina vemos como seleccionar elementos
+
+*/
+
+
+/*
+como puedo seguir aprendiendo
+        buscar nuevos standares y verificar si tiene soporte
+*/
