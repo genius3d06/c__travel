@@ -138,6 +138,7 @@ body{
 .swiper-slide--info p{
     color: #ffffff;
     margin-bottom: 15px;
+    margin-right: 50px;
 }
 
 /* IMG 1*/
@@ -213,6 +214,124 @@ body{
 
     .swiper-slide--info{
         font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 800px){
+    .swiper-slide--lugar h3{
+        font-size: 2.3rem;
+    }
+
+    .swiper-slide--lugar p{
+        font-size: 25px;
+    }
+
+    .swiper-slide--info h4{
+        font-size: 1.6rem;
+    }
+
+    .swiper-slide--info p{
+        font-size: 18px;
+    }
+
+    .swiper-slide--info a{
+        font-size: 1.2rem;
+    }
+
+    .swiper-slide--info .mapa{
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 600px){
+    .swiper-slide div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .swiper-slide--lugar{
+        margin-left: 10px;
+        padding-left: 10px;
+        height: 50vh;
+    }
+
+    .swiper-slide--lugar h3{
+        font-size: 2rem;
+    }
+
+    .swiper-slide--lugar p{
+        font-size: 20px;
+    }
+
+    .swiper-slide--info{
+        height: 50vh;
+    }
+
+    .swiper-slide--info h4{
+        font-size: 1.4rem;
+    }
+
+    .swiper-slide--info p{
+        font-size: 18px;
+    }
+
+    .swiper-slide--info a{
+        font-size: 1rem;
+    }
+
+    .swiper-slide--info .mapa{
+        font-size: 1rem;
+    }
+
+    .swiper-slide--info img{
+        width: 18px;
+    }
+
+    .swiper-slide--info .blackStar{
+        margin-top: 3px;
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 800px) and (orientation: landscape){
+    .swiper-slide--lugar h3{
+        font-size: 2rem;
+    }
+
+    .swiper-slide--lugar p{
+        font-size: 20px;
+    }
+
+    .swiper-slide--info h4{
+        font-size: 1.3rem;
+    }
+
+    .swiper-slide--info p{
+        font-size: 15px;
+    }
+
+    .swiper-slide--info a{
+        font-size: 1rem;
+    }
+
+    .swiper-slide--info .mapa{
+        font-size: 1rem;
+    }
+
+    .swiper-slide--info h5{
+        font-size: 1.3rem;
+    }
+
+    .swiper-slide--info img{
+        width: 20px;
+    }
+
+    .swiper-slide--info  .blackStar{
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
     }
 }
 

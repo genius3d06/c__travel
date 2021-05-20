@@ -4,7 +4,7 @@ var swiper = new Swiper('.swiper-container', {
     loop: true,
 
     autoplay: {  //Autoplay se usa para reproducir algo automatico con tiempo e retraso
-        delay: 2000,
+        delay: 4000,
         disableOnInteraction: false,
     },
 

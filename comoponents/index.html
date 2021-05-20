@@ -12,20 +12,29 @@
     <link rel="stylesheet" href="../styles/styles_carrusel.css">
 </head>
 <body>
+
+    <!-- ir arriba -->
+    <div class="go-top">
+        <img src="../assets/up.png" alt="up">
+    </div>
+
+
     <header class="header">
-        <div class="header__name">
-            <h1>c__Travel</h1>
-            <img src="../assets/logo.png" alt="logo">
-        </div>
-        <div class="header__menu">
-            <ul>
-                <li>
-                    <a href="a">Inicio</a>
-                    <a href="a">Galeria</a>
-                    <a href="a">Soporte</a>
-                    <a href="a">Rutas</a>
-                </li>
-            </ul>
+        <div class="header-responsive">
+            <div class="header__name">
+                <h1>c__Travel</h1>
+                <img src="../assets/logo.png" alt="logo">
+            </div>
+            <div class="header__menu">
+                <ul>
+                    <li>
+                        <a href="index.html">Inicio</a>
+                        <a href="#cascada">Galeria</a>
+                        <a href="#soporte">Soporte</a>
+                        <a href="a">Rutas</a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <div class="header__login">
             <div class="header__login--logo">
@@ -35,7 +44,7 @@
             <div class="header__login--user">
                 <ul>
                     <li>
-                        <a href="a">Login</a>
+                        <a target="_blank" href="login.html">Login</a>
                         <a href="a">Log Out</a>
                     </li>
                 </ul>
@@ -59,13 +68,13 @@
                             <div class="swiper-slide--info">
                                 <ul>
                                     <h4><b>Clima:</b> 19 c </h4>
-                                    <h4><b>Ruta:</b> <a class="mapa" href="a">Ver mapa</a></h4>
+                                    <h4><b>Ruta:</b> <a class="mapa" target="_blank" href="https://www.google.com/maps/place/Cajabamba/@-7.6231116,-78.0491422,16.5z/data=!4m5!3m4!1s0x91b2068b133730c7:0xe00bdb57390a89df!8m2!3d-7.6254277!4d-78.0442093">Ver mapa</a></h4>
                                     <li>
                                         <h4><b>Puntuacion:</b> </h4>
                                         <img src="../assets/star.svg" alt="star" class="star">
                                         <img src="../assets/star.svg" alt="star" class="star">
                                         <img src="../assets/star.svg" alt="star" class="star">
-                                        <img src="../assets/star.svg" alt="star" class="star">
+                                        <img src="../assets/blackstar.png" alt="blackStar" class="blackStar">
                                         <img src="../assets/blackstar.png" alt="blackStar" class="blackStar">
                                     </li>
                                     <h5><b>Descripcion</b></5>
@@ -86,9 +95,9 @@
                             </div>
                             <div class="swiper-slide--info">
                                 <ul>
-                                    <h4><b>Distacnia:</b> 23km</h4>
+                                    <h4><b>Distacnia:</b> 15.8km - 25min</h4>
                                     <h4><b>Clima:</b> 19 c </h4>
-                                    <h4><b>Ruta:</b><a class="mapa" href="a">Ver mapa</a></h4>
+                                    <h4><b>Ruta:</b><a class="mapa" target="_blank" href="https://www.google.com/maps/dir/-7.6229409,-78.0460737/Cascadas+de+Cochecorral,+Cajabamba+06350/@-7.6045784,-78.0398474,13.75z/data=!4m8!4m7!1m0!1m5!1m1!1s0x91b200c4c641988f:0x638c2e60858d71f4!2m2!1d-78.004099!2d-7.5859955">Ver mapa</a></h4>
                                     <li>
                                         <h4><b>Puntuacion:</b> </h4>
                                         <img src="../assets/star.svg" alt="star" class="star">
@@ -101,7 +110,7 @@
                                     <p>Es un lugar no muy alejado de la ciudad de cajambamba- cajamarca <br>
                                     en este lugar podras disfrutar de unas vistas impresionantes, naturaleza <br>
                                     </p>
-                                    <a class="info" href="a">Mas Informacion</a>
+                                    <a class="info" href="#cascada">Mas Informacion</a>
                                 </ul>
                             </div>
                         </div>
@@ -116,9 +125,9 @@
                             </div>
                             <div class="swiper-slide--info">
                                 <ul>
-                                    <h4><b>Distacnia:</b> 4km</h4>
+                                    <h4><b>Distacnia:</b> 8.1km - 30min</h4>
                                     <h4><b>Clima:</b> 16 c </h4>
-                                    <h4><b>Ruta:</b> <a class="mapa" href="a">Ver mapa</a></h4>
+                                    <h4><b>Ruta:</b> <a class="mapa" target="_blank" href="https://www.google.com/maps/dir/-7.6229409,-78.0460737/-7.5989371,-78.0806251/@-7.5981022,-78.0875398,14z">Ver mapa</a></h4>
                                     <li>
                                         <h4><b>Puntuacion:</b> </h4>
                                         <img src="../assets/star.svg" alt="star" class="star">
@@ -129,7 +138,7 @@
                                     </li>
                                     <h5><b>Descripcion</b></5>
                                     <p>Aqui podras disfrutar de impresionantes vistas ademas de una caminata muy divertida</p>
-                                    <a class="info" href="a">Mas Informacion</a>
+                                    <a class="info" href="#catarata">Mas Informacion</a>
                                 </ul>
                             </div>
                         </div>
@@ -144,9 +153,9 @@
                             </div>
                             <div class="swiper-slide--info">
                                 <ul>
-                                    <h4><b>Distacnia:</b> 3.1km</h4>
+                                    <h4><b>Distacnia:</b> 8.1km - 10min</h4>
                                     <h4><b>Clima:</b> 17 c </h4>
-                                    <h4><b>Ruta:</b> <a class="mapa" href="a">Ver mapa</a></h4>
+                                    <h4><b>Ruta:</b> <a class="mapa" target="_blank" href="https://www.google.com/maps/dir/-7.6229409,-78.0460737/-7.6028851,-78.0845161/@-7.6049022,-78.0887393,16.75z">Ver mapa</a></h4>
                                     <li>
                                         <h4><b>Puntuacion:</b> </h4>
                                         <img src="../assets/star.svg" alt="star" class="star">
@@ -157,7 +166,7 @@
                                     </li>
                                     <h5><b>Descripcion</b></5>
                                     <p>Una laguna hermosa no muy alejada de la ciudad de cajabamba ademas aqui podras practicar la pesca!</p>
-                                    <a class="info" href="a">Mas Informacion</a>
+                                    <a class="info" href="#ponte">Mas Informacion</a>
                                 </ul>
                             </div>
                         </div>
@@ -167,14 +176,14 @@
                             <div class="swiper-slide--lugar">
                                 <ul>
                                     <h3>Lagina Sausacocha</h3>
-                                    <p>Disfruta de las impresionantes y maravillosas  cascadas de coche corral</p>
+                                    <p>Disfruta de las impresionantes y maravillosas  laguna y toda la naturaleza ademas podria haber trucha</p>
                                 </ul>
                             </div>
                             <div class="swiper-slide--info">
                                 <ul>
-                                    <h4><b>Distacnia:</b> 25km</h4>
+                                    <h4><b>Distacnia:</b> 18.1km - 51min</h4>
                                     <h4><b>Clima:</b> 15 c </h4>
-                                    <h4><b>Ruta:</b> <a class="mapa" href="a">Ver mapa</a></h4>
+                                    <h4><b>Ruta:</b> <a class="mapa" target="_blank" href="https://www.google.com/maps/dir/-7.6229409,-78.0460737/-7.6299592,-77.959389/@-7.6302078,-77.9598805,18.25z">Ver mapa</a></h4>
                                     <li>
                                         <h4><b>Puntuacion:</b> </h4>
                                         <img src="../assets/star.svg" alt="star" class="star">
@@ -185,7 +194,7 @@
                                     </li>
                                     <h5><b>Descripcion</b></5>
                                     <p>Laguna algo alejada de la ciudad de cajabamba pero con impresionantes vistas y una ruta inolvidable</p>
-                                    <a class="info" href="a">Mas Informacion</a>
+                                    <a class="info" href="#sausacocha">Mas Informacion</a>
                                 </ul>
                             </div>
                         </div>
@@ -200,9 +209,9 @@
                             </div>
                             <div class="swiper-slide--info">
                                 <ul>
-                                    <h4><b>Distacnia:</b> 3.8km</h4>
+                                    <h4><b>Distacnia:</b> 2.4km-8min</h4>
                                     <h4><b>Clima:</b> 18 c </h4>
-                                    <h4><b>Ruta:</b> <a class="mapa" href="a">Ver mapa</a></h4>
+                                    <h4><b>Ruta:</b> <a class="mapa" target="_blank" href="https://www.google.com/maps/dir/-7.6229409,-78.0460737/Pozas+del+Chivato/@-7.6347661,-78.0538813,17.75z/data=!4m8!4m7!1m0!1m5!1m1!1s0x91adf9c2d4ebf275:0x517e1ffbbda3646a!2m2!1d-78.0534404!2d-7.6349876">Ver mapa</a></h4>
                                     <li>
                                         <h4><b>Puntuacion:</b> </h4>
                                         <img src="../assets/star.svg" alt="star" class="star">
@@ -214,7 +223,7 @@
 
                                     <h5><b>Descripcion</b></5>
                                     <p>Disfruta de una caminata llena de adrenalina cruzando las posas del chivato no muy alejada de la ciudad de cajabamba!</p>
-                                    <a class="info" href="a">Mas Informacion</a>
+                                    <a class="info" href="#chivato">Mas Informacion</a>
                                 </ul>
                             </div>
                         </div>
@@ -224,14 +233,14 @@
                             <div class="swiper-slide--lugar">
                                 <ul>
                                     <h3>Ojos del Lanla</h3>
-                                    <p>Disfruta de las impresionantes y maravillosas  cascadas de coche corral</p>
+                                    <p>Quieres pasar la tarde en un lugar cercano visita este lugar!</p>
                                 </ul>
                             </div>
                             <div class="swiper-slide--info">
                                 <ul>
-                                    <h4><b>Distacnia:</b> 1.2km</h4>
+                                    <h4><b>Distacnia:</b> 1.5km - 6min</h4>
                                     <h4><b>Clima:</b> 20 c </h4>
-                                    <h4><b>Ruta:</b> <a class="mapa" href="a">Ver mapa</a></h4>
+                                    <h4><b>Ruta:</b> <a class="mapa" target="_blank" href="https://www.google.com/maps/dir/-7.6229409,-78.0460737/-7.6269296,-78.0557384/@-7.6285349,-78.0578398,17.5z">Ver mapa</a></h4>
                                     <li>
                                         <h4><b>Puntuacion:</b> </h4>
                                         <img src="../assets/star.svg" alt="star" class="star">
@@ -242,7 +251,7 @@
                                     </li>
                                     <h5><b>Descripcion</b></5>
                                     <p>Lugar cercano a cajabmba junto a la pena del olvido puedes pasar runa tarde divertida</p>
-                                    <a class="info" href="a">Mas Informacion</a>
+                                    <a class="info" href="#lanla">Mas Informacion</a>
                                 </ul>
                             </div>
                         </div>
@@ -257,9 +266,9 @@
                             </div>
                             <div class="swiper-slide--info">
                                 <ul>
-                                    <h4><b>Distacnia:</b> 1 km</h4>
+                                    <h4><b>Distacnia:</b> 1.7 km - 7min</h4>
                                     <h4><b>Clima:</b> 20 c </h4>
-                                    <h4><b>Ruta:</b> <a class="mapa" href="a">Ver mapa</a></h4>
+                                    <h4><b>Ruta:</b> <a class="mapa" target="_blank" href="https://www.google.com/maps/dir/-7.6229409,-78.0460737/La+Pe%C3%B1a+del+Olvido/@-7.6285349,-78.0578398,17.5z/data=!4m8!4m7!1m0!1m5!1m1!1s0x0:0x5289feac78a0f195!2m2!1d-78.0561102!2d-7.6279755">Ver mapa</a></h4>
                                     <li>
                                         <h4><b>Puntuacion:</b> </h4>
                                         <img src="../assets/star.svg" alt="star" class="star">
@@ -270,7 +279,7 @@
                                     </li>
                                     <h5><b>Descripcion</b></5>
                                     <p>Puedes disfrutar de este lugar turistico a 5 minutos de la plaza de armas de Cajabamba</p>
-                                    <a class="info" href="a">Mas Informacion</a>
+                                    <a class="info" href="#olvido">Mas Informacion</a>
                                 </ul>
                             </div>
                         </div>
@@ -304,7 +313,7 @@
             </ul>
         </div>
         <div class="aside__name">
-            <h4>Cascadas de Coche corral</h4>
+            <h4 id="cascada">Cascadas de Coche corral</h4>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ab, repudiandae veniam at corrupti rem dolore velit tempore deleniti consequatur odio nulla iure corporis enim distinctio, quisquam, voluptate ex est.</p>
             <ul class="aside__name--galeria">
                 <img src="../assets/cascadas-de-Cochecorral.jpg" alt="img1">
@@ -313,7 +322,7 @@
             </ul>
         </div>
         <div class="aside__name">
-            <h4>Cataratas de ponte</h4>
+            <h4 id="catarata">Cataratas de ponte</h4>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ab, repudiandae veniam at corrupti rem dolore velit tempore deleniti consequatur odio nulla iure corporis enim distinctio, quisquam, voluptate ex est.</p>
             <ul class="aside__name--galeria2">
                 <img src="../assets/catarata ponte cajabamba.png" alt="img1">
@@ -322,7 +331,7 @@
             </ul>
         </div>
         <div class="aside__name">
-            <h4>Laguna de Ponte</h4>
+            <h4 id="ponte">Laguna de Ponte</h4>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ab, repudiandae veniam at corrupti rem dolore velit tempore deleniti consequatur odio nulla iure corporis enim distinctio, quisquam, voluptate ex est.</p>
             <ul class="aside__name--galeria3">
                 <img src="../assets/ponte2.jpg" alt="img3">
@@ -331,7 +340,7 @@
             </ul>
         </div>
         <div class="aside__name">
-            <h4>Chivato</h4>
+            <h4 id="chivato">Chivato</h4>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ab, repudiandae veniam at corrupti rem dolore velit tempore deleniti consequatur odio nulla iure corporis enim distinctio, quisquam, voluptate ex est.</p>
             <ul class="aside__name--galeria4">
                 <img src="../assets/CHIVATO.JPG" alt="img1">
@@ -340,16 +349,16 @@
             </ul>
         </div>
         <div class="aside__name">
-            <h4>Laguna Sausacocha</h4>
+            <h4 id="sausacocha">Laguna Sausacocha</h4>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ab, repudiandae veniam at corrupti rem dolore velit tempore deleniti consequatur odio nulla iure corporis enim distinctio, quisquam, voluptate ex est.</p>
-            <ul class="aside__name--galeria">
+            <ul class="aside__name--galeria5">
                 <img src="../assets/lagunaq1.jpeg" alt="img1">
                 <img src="../assets/lagunaq2.jpeg" alt="img2">
                 <img src="../assets/lagunaq3.jpeg" alt="img3">
             </ul>
         </div>
         <div class="aside__name">
-            <h4>Ojos del Langla</h4>
+            <h4 id="lanla">Ojos del Langla</h4>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ab, repudiandae veniam at corrupti rem dolore velit tempore deleniti consequatur odio nulla iure corporis enim distinctio, quisquam, voluptate ex est.</p>
             <ul class="aside__name--galeria">
                 <img src="../assets/ojos del langla.jpg" alt="img1">
@@ -358,7 +367,7 @@
             </ul>
         </div>
         <div class="aside__name">
-            <h4>Penia del Olvido</h4>
+            <h4 id="olvido">Penia del Olvido</h4>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati ab, repudiandae veniam at corrupti rem dolore velit tempore deleniti consequatur odio nulla iure corporis enim distinctio, quisquam, voluptate ex est.</p>
             <ul class="aside__name--galeria">
                 <img src="../assets/pena1.jpg" alt="img1">
@@ -368,7 +377,7 @@
         </div>
     </aside>
 
-    <footer class="footer">
+    <footer id="soporte" class="footer">
         <h2>Ingresar informacion</h2>
         <div class="flex-container">
             <form class="form">
@@ -419,5 +428,6 @@
     </footer>
     <script src="../scripts/swiper.min.js"></script>
     <script src="../scripts/carrusel.js"></script>
+    <script src="../scripts/go-top.js"></script>
 </body>
 </html>
